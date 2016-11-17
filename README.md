@@ -19,6 +19,7 @@ We also started looking into options for Text Analytics API and found promise in
 We also discussed the UX/UI of the application and decided on 3 main layouts: one main layout for searching, another for the results, and a third for user settings. (Dan has a drawing of the layout)
 Actual Work Progress
 
-Dan started working on the main layout and has a functional accordian as we discussed in previous meeting. (see Screenshot image)
-George started working on the settings layout
-Yusuf started on the scraper
+Current work...
+* Dan started working on the main layout and has a functional accordian as we discussed in previous meeting. (see Screenshot image)
+* George started working on creating a database for saved searches / search history
+* Yusuf started on the scraper
