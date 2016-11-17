@@ -7,12 +7,12 @@ Meeting on Thursday, November 10th
 Our group used last class's opportunity to meet and discuss the project. We made a plan for our project with details on exactly how it will be implemented.
 We decided to minimize the amount of scraped websites to just 3 or 4, so that once we have those down and a fully functionally we can expand to more websites.
 We started compliling a list of potential websites for scraping:
-	• https://examine.com/
-		○ Human Effect Matrix
-        Common (but not mandatory on the website)
-	• http://nootriment.com/
-		○ Pros & Cons
-        Mandatory
+* https://examine.com/
+	* Human Effect Matrix
+		* Common (but not mandatory on the website)
+* http://nootriment.com/
+	* Has Pros & Cons list
+		* Mandatory
         
 We also started looking into options for Text Analytics API and found promise in this one https://developer.aylien.com/text-api-demo?text=http%3A%2F%2Fwww.bbc.com%2Fsport%2F0%2Ffootball%2F25912393&language=en&tab=summarize
 
