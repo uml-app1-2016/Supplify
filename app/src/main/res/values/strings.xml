@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Supplify</string>
+
+    <string name="action_delete_history">Delete History</string>
+
+    <string name="action_add_dummy_history">Add Dummy Data</string>
+</resources>
