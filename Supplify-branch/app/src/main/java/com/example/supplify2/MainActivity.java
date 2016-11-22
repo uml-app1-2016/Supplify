@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId())
         {
-            // Respond to a click on the "Insert dummy data" menu option
+            // Respond to a click on the "View history" menu option
             case R.id.action_view_history:
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
