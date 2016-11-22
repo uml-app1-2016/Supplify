@@ -62,23 +62,13 @@ public class HistoryCursorAdapter extends CursorAdapter {
         TextView nameTextView = (TextView) view.findViewById(R.id.name);
         TextView summaryTextView = (TextView) view.findViewById(R.id.summary);
 
-        // Find the columns of pet attributes that we're interested in
+        // Find the columns of the supplement attributes that we're interested in
         int nameColumnIndex = cursor.getColumnIndex(HistoryContract.HistoryItem.COLUMN_SUPP_NAME);
-        int breedColumnIndex = cursor.getColumnIndex(HistoryContract.HistoryItem.COLUMN_PET_BREED);
 
-        // Read the pet attributes from the Cursor for the current pet
-        String petName = cursor.getString(nameColumnIndex);
-        String petBreed = cursor.getString(breedColumnIndex);
-
-        // If the pet breed is empty string or null, then use some default text
-        // that says "Unknown breed", so the TextView isn't blank.                                                                                                                                                                                                                                                                            +
-
-        if (TextUtils.isEmpty(petBreed)) {
-            petBreed = context.getString(R.string.unknown_breed);
-        }
+        // Read the supplement attributes from the Cursor for the current supplement
+        String suppName = cursor.getString(nameColumnIndex);
 
         // Update the TextViews with the attributes for the current pet
-        nameTextView.setText(petName);
-        summaryTextView.setText(petBreed);
+        nameTextView.setText(suppName);
     }
 }

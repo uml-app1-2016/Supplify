@@ -20,8 +20,8 @@ import android.widget.ListView;
 
 import com.example.supplify2.data.HistoryContract.HistoryItem;
 
-public class MainActivity extends AppCompatActivity implements
-        LoaderManager.LoaderCallbacks<Cursor>
+public class MainActivity extends AppCompatActivity
+//        implements LoaderManager.LoaderCallbacks<Cursor>
 {
 
     /** Identifier for the pet data loader */
@@ -118,34 +118,34 @@ public class MainActivity extends AppCompatActivity implements
         Log.v("CatalogActivity", rowsDeleted + " rows deleted from history database");
     }
 
-    @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle)
-    {
-        // Define a projection that specifies the columns from the table we care about.
-        String[] projection = {
-                HistoryItem._ID,
-                HistoryItem.COLUMN_SUPP_NAME };
-
-        // This loader will execute the ContentProvider's query method on a background thread
-        return new CursorLoader(this,      // Parent activity context
-                HistoryItem.CONTENT_URI,   // Provider content URI to query
-                projection,                // Columns to include in the resulting Cursor
-                null,                      // No selection clause
-                null,                      // No selection arguments
-                null);                     // Default sort order
-    }
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data)
-    {
-        // Update {@link HistoryCursorAdapter} with this new cursor containing updated pet data
-        mCursorAdapter.swapCursor(data);
-    }
-
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader)
-    {
-        // Callback called when the data needs to be deleted
-        mCursorAdapter.swapCursor(null);
-    }
+//    @Override
+//    public Loader<Cursor> onCreateLoader(int i, Bundle bundle)
+//    {
+//        // Define a projection that specifies the columns from the table we care about.
+//        String[] projection = {
+//                HistoryItem._ID,
+//                HistoryItem.COLUMN_SUPP_NAME };
+//
+//        // This loader will execute the ContentProvider's query method on a background thread
+//        return new CursorLoader(this,      // Parent activity context
+//                HistoryItem.CONTENT_URI,   // Provider content URI to query
+//                projection,                // Columns to include in the resulting Cursor
+//                null,                      // No selection clause
+//                null,                      // No selection arguments
+//                null);                     // Default sort order
+//    }
+//
+//    @Override
+//    public void onLoadFinished(Loader<Cursor> loader, Cursor data)
+//    {
+//        // Update {@link HistoryCursorAdapter} with this new cursor containing updated pet data
+//        mCursorAdapter.swapCursor(data);
+//    }
+//
+//    @Override
+//    public void onLoaderReset(Loader<Cursor> loader)
+//    {
+//        // Callback called when the data needs to be deleted
+//        mCursorAdapter.swapCursor(null);
+//    }
 }
