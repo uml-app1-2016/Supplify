@@ -7,7 +7,7 @@ In the past we were reloading the page every time we wanted
 to scrape a different piece of information from it and
 this got to be very network intensive.
 
-Other features added included:
+Other features added included:  
 1. Getting the ratings of drugs  
 2. Retrieving the dosage information  
 3. Getting the pros of a drug  
