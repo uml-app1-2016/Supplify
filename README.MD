@@ -16,3 +16,14 @@ Other features added included:
 George:
 
 Worked on the database portion, which we're currently using in the Search History view. Added icon to the menu bar for a way navigate to the History View. History View is finally functional. Immediate goals: Store text in the search icon, and upon hitting the "search" button, store the string as a new object in the Search History database.
+
+Work was done on the following files
+* DrugActivity.java
+* HistoryActivity.java
+* MainActivity.java
+* activity_history.xml
+* list_item.xml
+* Database files
+  * HistoryContract.java
+  * HistoryDbHelper.java
+  * HistoryProvider.java
