@@ -27,3 +27,7 @@ Work was done on the following files
   * HistoryContract.java
   * HistoryDbHelper.java
   * HistoryProvider.java
+
+Daniel Campbell:
+
+Worked on the UI from the Main Activity, Drug Activity, and History Activity. Also working on merging the multiple branges into one project. Immediate goal is the creation of the main App project and a user preference system ie. favorites.
