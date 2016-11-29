@@ -1,4 +1,4 @@
-Yusuf:
+Yusuf Yildiz:
 
 Added several new functionalities to the scraper.
 These include the capability to pass in a list of types
@@ -13,7 +13,7 @@ Other features added included:
 3. Getting the pros of a drug  
 4. Getting the cons of a drug  
 
-George:
+George Mitwasi:
 
 Worked on the database portion, which we're currently using in the Search History view. Added icon to the menu bar for a way navigate to the History View. History View is finally functional. Immediate goals: Store text in the search icon, and upon hitting the "search" button, store the string as a new object in the Search History database. Also merging code, that must be done soon!
 
