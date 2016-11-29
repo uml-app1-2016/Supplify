@@ -6,6 +6,7 @@
 
     <item
         android:id="@+id/action_view_history"
+        android:icon="@mipmap/history_icon"
         android:title="@string/action_view_history"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 </menu>
