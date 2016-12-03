@@ -1,4 +1,29 @@
-# Supplify
-Application that retrieves a concise and thorough background on any supplement.
+Yusuf Yildiz:
 
-Here's the link to our project proposal on [Google Docs](https://docs.google.com/document/d/1M4Ny7-L1ZS2ZprWIovuIOqms2MEHW080MaYKJfZrReA/edit?usp=sharing).
+Added several new functionalities to the scraper.
+These include the capability to pass in a list of types
+which are used to scrape different parts of the page.
+In the past we were reloading the page every time we wanted
+to scrape a different piece of information from it and
+this got to be very network intensive.
+
+Other features added included:  
+1. Getting the ratings of drugs  
+2. Retrieving the dosage information  
+3. Getting the pros of a drug  
+4. Getting the cons of a drug  
+
+George Mitwasi:
+
+Worked on the database portion, which we're currently using in the Search History view. Added icon to the menu bar for a way navigate to the History View. History View is finally functional. Immediate goals: Store text in the search icon, and upon hitting the "search" button, store the string as a new object in the Search History database. Also merging code, that must be done soon!
+
+Work was done on the following files
+* DrugActivity.java
+* HistoryActivity.java
+* MainActivity.java
+* activity_history.xml
+* list_item.xml
+* Database files
+  * HistoryContract.java
+  * HistoryDbHelper.java
+  * HistoryProvider.java

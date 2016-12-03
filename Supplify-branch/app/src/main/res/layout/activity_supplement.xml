@@ -1,22 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".DrugActivity">
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:id="@+id/textView1"
+            android:gravity="center"
+            android:textSize="40sp"/>
+
         <Button
+            android:layout_marginTop="95dp"
             android:id="@+id/magic_btn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Magic Btn"/>
+            android:layout_height="60dp"
+            android:text="Pro's"/>
         <LinearLayout
+            android:layout_below="@id/magic_btn"
             android:id="@+id/magic_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:orientation="vertical"
             android:visibility="gone">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/pros"
+                    android:text="Here goes the pros"/>
         </LinearLayout>
-</ScrollView>
+
+        <Button
+            android:layout_below="@+id/magic_layout"
+            android:id="@+id/magic_btn2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Cons"/>
+        <LinearLayout
+            android:id="@+id/magic_layout2"
+            android:layout_below="@id/magic_btn2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/cons"
+                    android:text="Here goes the cons"/>
+        </LinearLayout>
+</RelativeLayout>

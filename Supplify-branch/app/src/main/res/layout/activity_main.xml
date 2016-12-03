@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/background"
     tools:context="com.example.supplify2.MainActivity">
 
     <RelativeLayout
@@ -16,9 +17,16 @@
 
         <EditText
             android:id="@+id/search_target"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="match_parent"
             android:hint="Search"/>
+        <Button
+            android:id="@+id/go_to_drugs"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:hint="Go"
+            android:layout_marginLeft="250dp"
+            />
     </RelativeLayout>
 
     <RelativeLayout

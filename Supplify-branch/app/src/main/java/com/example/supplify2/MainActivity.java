@@ -17,13 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.supplify2.data.HistoryContract.HistoryItem;
 
-public class MainActivity extends AppCompatActivity
-//        implements LoaderManager.LoaderCallbacks<Cursor>
-{
+public class MainActivity extends AppCompatActivity implements
+        android.app.LoaderManager.LoaderCallbacks<Cursor> {
 
     /** Identifier for the pet data loader */
     private static final int HISTORY_LOADER = 0;
@@ -46,7 +47,72 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
+                EditText etLocation = (EditText) findViewById(R.id.search_target);
                 Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                intent.putExtra("location", etLocation.getText().toString());
+                startActivity(intent);
+
+            }
+        });
+        final Button btnGo = (Button) findViewById(R.id.go_to_drugs);
+
+        btnGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                EditText etLocation = (EditText) findViewById(R.id.search_target);
+
+                // Convert the search name into a string
+                String searchName = etLocation.getText().toString();
+
+                // Check to see if the supplement is already in the data base using a query
+                String[] projection = {HistoryItem.COLUMN_SUPP_NAME};
+                String selection = HistoryItem.COLUMN_SUPP_NAME;
+                String[] selectionArguments = {searchName};
+
+                cu
+
+                if (mCurrentPetUri == null) {
+                    // This is a NEW pet, so insert a new pet into the provider,
+                    // returning the content URI for the new pet.
+                    Uri newUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
+
+                    // Show a toast message depending on whether or not the insertion was successful.
+                    if (newUri == null) {
+                        // If the new content URI is null, then there was an error with insertion.
+                        Toast.makeText(this, getString(R.string.editor_insert_pet_failed),
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Otherwise, the insertion was successful and we can display a toast.
+                        Toast.makeText(this, getString(R.string.editor_insert_pet_successful),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Otherwise this is an EXISTING pet, so update the pet with content URI: mCurrentPetUri
+                    // and pass in the new ContentValues. Pass in null for the selection and selection args
+                    // because mCurrentPetUri will already identify the correct row in the database that
+                    // we want to modify.
+                    int rowsAffected = getContentResolver().update(mCurrentPetUri, values, null, null);
+
+                    // Show a toast message depending on whether or not the update was successful.
+                    if (rowsAffected == 0) {
+                        // If no rows were affected, then there was an error with the update.
+                        Toast.makeText(this, getString(R.string.editor_update_pet_failed),
+                                Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Otherwise, the update was successful and we can display a toast.
+                        Toast.makeText(this, getString(R.string.editor_update_pet_successful),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                // If it exists, then pull it up from our database
+
+                // If it does not exist, scrape it and continue to the DrugActivity
+
+
+                Intent intent = new Intent(MainActivity.this, DrugActivity.class);
+                intent.putExtra("location", etLocation.getText().toString());
                 startActivity(intent);
             }
         });
@@ -101,34 +167,35 @@ public class MainActivity extends AppCompatActivity
         Log.v("CatalogActivity", rowsDeleted + " rows deleted from history database");
     }
 
-//    @Override
-//    public Loader<Cursor> onCreateLoader(int i, Bundle bundle)
-//    {
-//        // Define a projection that specifies the columns from the table we care about.
-//        String[] projection = {
-//                HistoryItem._ID,
-//                HistoryItem.COLUMN_SUPP_NAME };
-//
-//        // This loader will execute the ContentProvider's query method on a background thread
-//        return new CursorLoader(this,      // Parent activity context
-//                HistoryItem.CONTENT_URI,   // Provider content URI to query
-//                projection,                // Columns to include in the resulting Cursor
-//                null,                      // No selection clause
-//                null,                      // No selection arguments
-//                null);                     // Default sort order
-//    }
-//
-//    @Override
-//    public void onLoadFinished(Loader<Cursor> loader, Cursor data)
-//    {
-//        // Update {@link HistoryCursorAdapter} with this new cursor containing updated pet data
-//        mCursorAdapter.swapCursor(data);
-//    }
-//
-//    @Override
-//    public void onLoaderReset(Loader<Cursor> loader)
-//    {
-//        // Callback called when the data needs to be deleted
-//        mCursorAdapter.swapCursor(null);
-//    }
+    // Functions needed for a functional Cursor!
+    @Override
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle)
+    {
+        // Define a projection that specifies the columns from the table we care about.
+        String[] projection = {
+                HistoryItem._ID,
+                HistoryItem.COLUMN_SUPP_NAME };
+
+        // This loader will execute the ContentProvider's query method on a background thread
+        return new CursorLoader(this,      // Parent activity context
+                HistoryItem.CONTENT_URI,   // Provider content URI to query
+                projection,                // Columns to include in the resulting Cursor
+                null,                      // No selection clause
+                null,                      // No selection arguments
+                null);                     // Default sort order
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data)
+    {
+        // Update {@link HistoryCursorAdapter} with this new cursor containing updated pet data
+        mCursorAdapter.swapCursor(data);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader)
+    {
+        // Callback called when the data needs to be deleted
+        mCursorAdapter.swapCursor(null);
+    }
 }
