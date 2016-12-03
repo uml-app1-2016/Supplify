@@ -25,24 +25,9 @@ public class SupplifyScraper {
     // so that we can tell the user very quickly if their
     // supplement exists and we can complete their search.
 
-    public static ArrayList<ArrayList<String>> main(String[] args) throws IOException, IllegalArgumentException  {
-        if(args.length == 0) throw new IllegalArgumentException("Not enough arguments passed");
-        else {
-            String url = "http://nootriment.com/" + args[0];
-            String[] type_strs = args[1].split("\\s+");
-            ArrayList<Integer> types = new ArrayList<Integer>();
-            for(String s : type_strs) {
-                try {
-                    types.add(Integer.parseInt(s));
-                } catch (NumberFormatException e) {
-                    System.err.println("Argument" + s + " must be an integer.");
-                    System.exit(1);
-                }
-            }
-
-            return Supplify(url, types);
-        }
-
+    public static ArrayList<ArrayList<String>> nootrimentScraper(String name, int[] types) throws IOException, IllegalArgumentException  {
+        String url = "http://nootriment.com/" + name;
+        return Supplify(url, types);
     }
 
     // Type 1: Get Nootriment List of Supplements
@@ -52,7 +37,7 @@ public class SupplifyScraper {
     // Type 5: Get the cons of the drug
     // Type 6: Get the dosage of the drug
 
-    public static ArrayList<ArrayList<String>> Supplify(String url, ArrayList<Integer> type_list) throws IOException {
+    public static ArrayList<ArrayList<String>> Supplify(String url, int[] type_list) throws IOException {
         Document doc = Jsoup.connect(url).userAgent("Mozilla").get();
         ArrayList<ArrayList<String>> ret = new ArrayList<ArrayList<String>>();
         for(int i : type_list) {
