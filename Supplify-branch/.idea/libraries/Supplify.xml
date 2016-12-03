@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Supplify">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/Supplify.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.supplify2.data.HistoryContract.HistoryItem;
@@ -47,6 +48,20 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View view)
             {
                 Intent intent = new Intent(MainActivity.this, HistoryActivity.class);
+                startActivity(intent);
+
+            }
+        });
+        final Button btnGo = (Button) findViewById(R.id.go_to_drugs);
+
+        btnGo.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                EditText etLocation = (EditText) findViewById(R.id.search_target);
+                Intent intent = new Intent(MainActivity.this, DrugActivity.class);
+                intent.putExtra("location", etLocation.getText().toString());
                 startActivity(intent);
             }
         });
