@@ -113,31 +113,31 @@ public class DrugActivity extends AppCompatActivity{
                 e.printStackTrace();
             }
             ArrayList<String> list = map.get("SideEffects");
-            ArrayList<String> listA = null;
+            ArrayList<String> listA = new ArrayList<String>(4);
             String temp = "";
             for (String s : list) {
                 temp = temp + s;
 
             }
-            listA.add(1, temp);
-            temp = "";
+            listA.add(0,temp);
+            String temp1 = "";
             ArrayList<String> list2 = map.get("Dosage");
-            for (String s : list) {
-                temp = temp + s;
+            for (String s : list2) {
+                temp1 = temp1 + s;
             }
-            listA.add(2, temp);
-            temp = "";
+            listA.add(1, temp1);
+            String temp2 = "";
             ArrayList<String> list3 = map.get("Pros");
-            for (String s : list) {
-                temp = temp + s;
+            for (String s : list3) {
+                temp2 = temp2 + s;
             }
-            listA.add(3, temp);
-            temp = "";
+            listA.add(2, temp2);
+            String temp3 = "";
             ArrayList<String> list4 = map.get("Cons");
-            for (String s : list) {
-                temp = temp + s;
+            for (String s : list4) {
+                temp3 = temp3 + s;
             }
-            listA.add(4, temp);
+            listA.add(3, temp3);
             return listA;
         }
 
