@@ -94,15 +94,18 @@ public class DrugActivity extends AppCompatActivity{
         return super.onOptionsItemSelected(item);
     }
 
-    private class accessNetwork extends AsyncTask<String, Void, String> {
+    private class accessNetwork extends AsyncTask<String, Void, ArrayList<String>> {
         int[] types = {2, 4, 5, 6};
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         Intent intent = getIntent();
         String str = intent.getStringExtra("location");
         TextView textView1 = (TextView) findViewById(R.id.textView1);
         TextView textView2 = (TextView) findViewById(R.id.side_effects);
+        TextView textView3 = (TextView) findViewById(R.id.pros);
+        TextView textView4 = (TextView) findViewById(R.id.cons);
+        TextView textView5 = (TextView) findViewById(R.id.dosage);
         @Override
-        protected String doInBackground(String... params) {
+        protected ArrayList<String> doInBackground(String... params) {
 
             try {
                 map = SupplifyScraper.nootrimentScraper(str, types);
@@ -110,18 +113,41 @@ public class DrugActivity extends AppCompatActivity{
                 e.printStackTrace();
             }
             ArrayList<String> list = map.get("SideEffects");
+            ArrayList<String> listA = null;
             String temp = "";
             for (String s : list) {
                 temp = temp + s;
+
             }
-            return temp;
+            listA.add(1, temp);
+            temp = "";
+            ArrayList<String> list2 = map.get("Dosage");
+            for (String s : list) {
+                temp = temp + s;
+            }
+            listA.add(2, temp);
+            temp = "";
+            ArrayList<String> list3 = map.get("Pros");
+            for (String s : list) {
+                temp = temp + s;
+            }
+            listA.add(3, temp);
+            temp = "";
+            ArrayList<String> list4 = map.get("Cons");
+            for (String s : list) {
+                temp = temp + s;
+            }
+            listA.add(4, temp);
+            return listA;
         }
 
         @Override
-        protected void onPostExecute(String result) {
-
+        protected void onPostExecute(ArrayList<String> result) {
             textView1.setText(str);
-            textView2.setText(result);
+            textView2.setText(result.get(0));
+            textView3.setText(result.get(2));
+            textView4.setText(result.get(3));
+            textView5.setText(result.get(1));
 
         }
 
