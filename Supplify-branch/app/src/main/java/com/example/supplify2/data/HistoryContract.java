@@ -42,5 +42,7 @@ public class HistoryContract {
         public final static String COLUMN_SUPP_DOSAGE ="dosage";
 
         public final static String COLUMN_SUPP_EFFECTS ="effects";
+
+
     }
 }

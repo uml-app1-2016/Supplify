@@ -3,147 +3,147 @@
 
     <item
         is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_68b35c75d93c4f1fe0f1a6806c5c85f88bd48b8a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_5603458611edf5f06f924619510066db38cbb67e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_3c9b3f6096c26717486cad05bcff2c1ffe1f6ef4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_dc9b68f8f69bb27c0a0ec055c2fe480f5fa64c71.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/libs/Supplify.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="4ce3af2d78ad6be2866c9cff7abdd8c39744fceb">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/Supplify_4ff9a2968886af6befa8c0c2d0fb53d37be4f2e5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_37c423989eef7f50f2da94f936ea56ccd0ee2ee3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_c61946a1130d0318a417b1687c802624565328c4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_50af9c378c665ade4c29c7e8a18e4d0842695d49.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_e89874a08cf09bb27e874031d4d4f0bab031dbee.jar" />
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_1a2fda4d4309b0e883434fee96288624c903016a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_8b79f6908af8fea169a241d4288d8666c754d8f0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_19580af6f0a8d9b07b4dfd6fb0631bbbdf53b909.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_a68a4b9e0cc54e1d485f20bf7cf29b03beb9f677.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_d0cb4596a3fcb61bee6657676a40e4e815e026a1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_7ab7b4cae3487b0fd3877dc10c3fa648d2298dfa.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_a08b374cae245ef9bdf3d8849057aeb0f1102eff.jar" />
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_b28b8cc747622c796db0def4c88d4917f1b1b0ea.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_f071c6a87cd0eeee7f1daee9208836646dfbd70d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_9b45c1b1d86cea03d9f17483cba96c762b910875.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_2641bc2647627074ad37d9ad9364efff920b97d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Program Files (x86)\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_aeaeaf6e61e30c9a1e1d270253e28c9934e606f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.2"
         sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="/home/daniel/sup/Supplify/Supplify-branch/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_2ca5ca9884a7e3ece50a1281d47bb3b603252b6c.jar" />
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_55e27d5522f3ba1e5844fcbc894d474d59fff224.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_061a64f5eb801b2c7e124278b7e0d9bf6551b22a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_6321d4f40a9f46a0b5d1346c301e3db5e5094b6a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_eb29e944575bc7f53b9077898fe8c75b691b5ec4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_3eb136df75680d523dea175848e9daeec9798344.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_2030a3007065344766819f2e2bdab0576618bdcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_814dd0a15be2a010eb5341a93a992ad94c607588.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_8c2e59c304243d04a92db80386d1a450f4f836eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_a9dbdce099bc1110d0dffcf0730dd73de6bc06a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\libs\Supplify.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.2"
+        sha1="4ce3af2d78ad6be2866c9cff7abdd8c39744fceb">
+        <dex dex="D:\Documents\GitHub\Supplify\Supplify\Supplify-branch\app\build\intermediates\pre-dexed\debug\Supplify_16c4f61c2167a0466f5b0965af15cf81095bd075.jar" />
     </item>
 
 </items>
