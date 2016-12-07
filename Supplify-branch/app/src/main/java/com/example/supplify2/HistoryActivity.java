@@ -26,7 +26,7 @@ public class HistoryActivity extends AppCompatActivity implements
 
     /** Identifier for the suppplement data loader */
     private static final int SUPP_LOADER = 0;
-
+    public DbHelper db;
     /** Adapter for the ListView */
     HistoryCursorAdapter mCursorAdapter;
 
@@ -35,10 +35,11 @@ public class HistoryActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        GlobalState state = (GlobalState) getApplicationContext();
+        db = new DbHelper(this);
+       // if (db.checkDatabase() == true){
+       //     final Supp supp = db.getSuppByName("name"); // WRONG STRING!
+       // }
 
-        DbHelper db = state.getDatabase();
-        final Supp supp = db.getSuppByName("name"); // WRONG STRING!
 
         // Find the ListView which will be populated with the history data
         ListView historyListView = (ListView) findViewById(R.id.list);

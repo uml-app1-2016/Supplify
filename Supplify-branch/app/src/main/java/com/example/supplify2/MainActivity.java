@@ -1,24 +1,19 @@
 package com.example.supplify2;
 
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v4.app.LoaderManager;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 
 import com.example.supplify2.data.DbHelper;
 import com.example.supplify2.data.GlobalState;
@@ -31,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements
     /** Identifier for the pet data loader */
     private static final int HISTORY_LOADER = 0;
 
+    public static DbHelper db;
+
     /** Content URI for the existing supplement (null if it's a new supplement) */
     private Uri mCurrentHistoryUri;
 
@@ -42,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        db = new DbHelper(this);
 
         // Find the ListView which will be populated with the past searched supplement data
         final Button historyButton = (Button) findViewById(R.id.go_to_history);
@@ -70,10 +69,12 @@ public class MainActivity extends AppCompatActivity implements
                 String searchName = etLocation.getText().toString();
 
                 // Check if the supplement already exists
-                GlobalState state = (GlobalState) getApplicationContext();
-                DbHelper db = state.getDatabase();
+                //GlobalState state = (GlobalState) getApplicationContext();
+                //DbHelper db = state.getDatabase();
 
                 Supp newSupp = new Supp(1, searchName, "", "", "");
+                db.insertSupp(newSupp);
+
                 //db.insertSupp(newSupp);
 //                if(db.suppExist(searchName)) { // if the supplement exists in our database
 //                    // retrieve it
@@ -108,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements
         switch (item.getItemId())
         {
             // Respond to a click on the "View history" menu option
-            case R.id.action_view_history:
+            case R.id.action_view_favorite:
                 startActivity(new Intent(this, HistoryActivity.class));
                 return true;
         }

@@ -3,7 +3,9 @@
 
     <string name="action_delete_history">Delete History</string>
 
-    <string name="action_view_history">View History</string>
+    <string name="action_view_favorite">View History</string>
+
+    <string name="action_add_to_favorite">Add to Favorites</string>
 
     <!-- Title text for the empty view, which is for when the user hasn't searched anything -->
     <string name="empty_view_title_text">Your search history is empty!</string>

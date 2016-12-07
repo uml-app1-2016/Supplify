@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,8 @@ import java.util.List;
 public class DbHelper extends SQLiteOpenHelper {
     public static final String LOG_TAG = DbHelper.class.getSimpleName();
 
+
+
     // Name of the database file
     private static final String DATABASE_NAME = "history.db";
 
@@ -25,7 +28,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
     // Columns of our database
     public static final String SUPPS_TABLE_NAME = "supps";
-    public static final String SUPPS_COLUMN_ID = "_ID";
+    public static final String SUPPS_COLUMN_ID = "id";
     public static final String SUPPS_COLOUMN_NAME = "name";
     public static final String SUPPS_COLUMN_DESCRIPTION = "description";
     public static final String SUPPS_COLUMN_DOSAGE = "dosage";
@@ -46,12 +49,12 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         // Create a String that contains the SQL statement to create the pets table
-        String SQL_CREATE_SUPPS_TABLE =  "CREATE TABLE " + SUPPS_TABLE_NAME +
-                " (INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                " NAME TEXT NOT NULL, " +
-                " DESCRIPTION TEXT, " +
-                " DOSAGE TEXT, " +
-                " EFFECT TEXT)";
+        String SQL_CREATE_SUPPS_TABLE =  "CREATE TABLE " + SUPPS_TABLE_NAME + "(" +
+              SUPPS_COLUMN_ID + " INTEGER PRIMARY KEY, " +
+              SUPPS_COLOUMN_NAME + "TEXT NOT NULL, " +
+              SUPPS_COLUMN_DESCRIPTION + " TEXT, " +
+              SUPPS_COLUMN_DOSAGE + " TEXT, " +
+              SUPPS_COLUMN_EFFECTS + " TEXT " + ")";
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_SUPPS_TABLE);
     }
@@ -79,8 +82,8 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put("description", supp.getDescription());
         contentValues.put("dosage", supp.getDosage());
         contentValues.put("effect", supp.getEffect());
-        db.insert("supps", null, contentValues);
-
+        db.insert(SUPPS_TABLE_NAME, null, contentValues);
+        db.close();
         return true;
     }
 
@@ -152,6 +155,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         return supp;
     }
+
 
     /** Function to check if the supplement exists */
     public boolean suppExist(String name) {

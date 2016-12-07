@@ -1,18 +1,19 @@
 package com.example.supplify2;
 
 import android.content.Intent;
-import android.graphics.LinearGradient;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.example.supplify2.data.DbHelper;
+import com.example.supplify2.data.Supp;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -21,13 +22,40 @@ import java.util.HashMap;
 /**
  * Created by daniel on 11/16/16.
  */
+
+
+
 public class DrugActivity extends AppCompatActivity{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement);
-        new accessNetwork().execute("");
 
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("location");
+
+
+        if(MainActivity.db.suppExist(str)) {
+            Supp supp = MainActivity.db.getSuppByName(str);
+            String name = supp.getName();
+            String dosage = supp.getDosage();
+            String sideEffects = supp.getEffect();
+            String description = supp.getDescription();
+            TextView textView1 = (TextView) findViewById(R.id.textView1);
+            TextView textView2 = (TextView) findViewById(R.id.side_effects);
+            TextView textView3 = (TextView) findViewById(R.id.pros);
+            TextView textView4 = (TextView) findViewById(R.id.cons);
+            TextView textView5 = (TextView) findViewById(R.id.dosage);
+            textView1.setText(name);
+            textView2.setText(dosage);
+            textView3.setText(description);
+            textView4.setText(description);
+            textView5.setText(sideEffects);
+        }
+        else {
+            new accessNetwork().execute("");
+        }
         Button findMagicBtn = (Button) findViewById(R.id.magic_btn);
         findMagicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +107,16 @@ public class DrugActivity extends AppCompatActivity{
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu options from the res/menu/menu_catalog.xml file.
+        // This adds menu items to the app bar.
+        getMenuInflater().inflate(R.menu.menu_drug, menu);
+        return true;
+    }
+
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
         // User clicked on a menu option in the app bar overflow menu
@@ -89,10 +127,15 @@ public class DrugActivity extends AppCompatActivity{
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
 
-            // Respond to a click on the "View history" menu option
-            case R.id.action_view_history:
-                startActivity(new Intent(this, HistoryActivity.class));
+
+            // User clicked on a menu option in the app bar overflow menu
+
+            // Respond to a click on the "Add to favorites" menu option
+            case R.id.action_set_favorite:
+                //Add to database
                 return true;
+
+
         }
         return super.onOptionsItemSelected(item);
     }
@@ -107,6 +150,8 @@ public class DrugActivity extends AppCompatActivity{
         TextView textView3 = (TextView) findViewById(R.id.pros);
         TextView textView4 = (TextView) findViewById(R.id.cons);
         TextView textView5 = (TextView) findViewById(R.id.dosage);
+
+
         @Override
         protected ArrayList<String> doInBackground(String... params) {
 

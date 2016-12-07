@@ -5,8 +5,8 @@
     tools:context=".com.example.supplify2.MainActivity">
 
     <item
-        android:id="@+id/action_view_history"
+        android:id="@+id/action_view_favorite"
         android:icon="@mipmap/history_icon"
-        android:title="@string/action_view_history"
+        android:title="@string/action_view_favorite"
         app:showAsAction="always" />
 </menu>
