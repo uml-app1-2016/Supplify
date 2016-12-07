@@ -28,7 +28,7 @@ import com.example.supplify2.data.Supp;
 public class MainActivity extends AppCompatActivity implements
         android.app.LoaderManager.LoaderCallbacks<Cursor> {
 
-    /** Identifier for the history data loader */
+    /** Identifier for the pet data loader */
     private static final int HISTORY_LOADER = 0;
 
     /** Content URI for the existing supplement (null if it's a new supplement) */
@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements
         final Button btnGo = (Button) findViewById(R.id.go_to_drugs);
 
         btnGo.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
@@ -73,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements
                 DbHelper db = state.getDatabase();
 
                 Supp newSupp = new Supp(1, searchName, "", "", "");
-                db.insertSupp(newSupp);
+                //db.insertSupp(newSupp);
 //                if(db.suppExist(searchName)) { // if the supplement exists in our database
 //                    // retrieve it
 //                }
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements
     private void insertSupp()
     {
         // Create a ContentValues object where column names are the keys,
-        // and Sunlight's attributes are the values.
+        // and Toto's pet attributes are the values.
         ContentValues values = new ContentValues();
         values.put(HistoryItem.COLUMN_SUPP_NAME, "Sunlight");
         values.put(HistoryItem.COLUMN_SUPP_DESCRIPTION, "Dat loud loud");
@@ -132,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /**
-     * Helper method to delete all supplements in the database.
+     * Helper method to delete all pets in the database.
      */
     private void deleteHistory()
     {
@@ -141,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     @Override
-    public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
+    public Loader<Cursor> onCreateLoader(int i, Bundle bundle){
         // Since the editor shows all supplements attributes, define a projection that contains
         // all columns from the supplement table
         String[] projection = {

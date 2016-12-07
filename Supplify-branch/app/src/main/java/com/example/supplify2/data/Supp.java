@@ -22,11 +22,11 @@ public class Supp {
     }
 
     /** Constructor */
-    public Supp( int newID,
-                 String newName,
-                 String newDescription,
-                 String newDosage,
-                 String newEffect) {
+    public Supp(int newID,
+                String newName,
+                String newDescription,
+                String newDosage,
+                String newEffect) {
         _ID = newID;
         name = newName;
         description = newDescription;

@@ -1,124 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/SupWhite"
     tools:context=".DrugActivity">
 
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:id="@+id/textView1"
-            android:gravity="center"
-            android:textSize="40sp"
-            android:textColor="@color/SupBlack"/>
-
-        <Button
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/magic_btn3"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@id/textView1"
-            android:text="Dosage"
-            android:background="@color/SupLightGreen"/>
-        <LinearLayout
-            android:layout_below="@id/magic_btn3"
-            android:id="@+id/magic_layout3"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:background="@color/SupDarkGreen"
-            android:visibility="gone">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:textColor="@color/SupWhite"
-                android:id="@+id/dosage"
-                android:text="Ey lmao"/>
-        </LinearLayout>
-
-        <Button
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/magic_btn"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@id/magic_layout3"
-            android:text="Pro's"/>
-        <LinearLayout
-            android:layout_below="@id/magic_btn"
-            android:id="@+id/magic_layout"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:visibility="gone">
-
+            android:layout_height="match_parent">
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:id="@+id/pros"
-                    android:text="Here goes the pros"/>
-        </LinearLayout>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView1"
+                    android:gravity="center"
+                    android:text="Loading"
+                    android:textSize="40sp"
+                    android:textColor="@color/SupBlack"/>
 
-        <Button
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_below="@+id/magic_layout"
-            android:id="@+id/magic_btn2"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:text="Cons"/>
-        <LinearLayout
-            android:id="@+id/magic_layout2"
-            android:layout_below="@id/magic_btn2"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:visibility="gone">
-                <TextView
+                <Button
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/magic_btn3"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:id="@+id/cons"
-                    android:text="Here goes the cons"/>
-        </LinearLayout>
+                    android:layout_height="75dp"
+                    android:layout_below="@id/textView1"
+                    android:text="Dosage"
+                    android:background="@color/SupLightGreen"
+                    android:visibility="gone"/>
+                <LinearLayout
+                    android:layout_below="@id/magic_btn3"
+                    android:id="@+id/magic_layout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/SupDarkGreen"
+                    android:visibility="gone">
 
-        <Button
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:id="@+id/magic_btn4"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_below="@id/magic_layout2"
-            android:text="Side Effects"/>
-        <LinearLayout
-            android:layout_below="@id/magic_btn4"
-            android:id="@+id/magic_layout4"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:orientation="vertical"
-            android:visibility="gone">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/SupWhite"
+                        android:id="@+id/dosage"
+                        android:text="Ey lmao"/>
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:id="@+id/side_effects"
-                android:text="literally"/>
-        </LinearLayout>
-</RelativeLayout>
+                <Button
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/magic_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/magic_layout3"
+                    android:text="Pro's"/>
+                <LinearLayout
+                    android:layout_below="@id/magic_btn"
+                    android:id="@+id/magic_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:id="@+id/pros"
+                            android:text="Here goes the pros"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_below="@+id/magic_layout"
+                    android:id="@+id/magic_btn2"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:text="Cons"/>
+                <LinearLayout
+                    android:id="@+id/magic_layout2"
+                    android:layout_below="@id/magic_btn2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:id="@+id/cons"
+                            android:text="Here goes the cons"/>
+                </LinearLayout>
+
+                <Button
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:id="@+id/magic_btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:visibility="gone"
+                    android:layout_below="@id/magic_layout2"
+                    android:text="Side Effects"/>
+                <LinearLayout
+                    android:layout_below="@id/magic_btn4"
+                    android:id="@+id/magic_layout4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:id="@+id/side_effects"
+                        android:text="literally"/>
+                </LinearLayout>
+        </RelativeLayout>
+</ScrollView>
