@@ -34,20 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Past Searches"
-            android:textSize="25dp"
-            android:id="@+id/history_text"
-            />
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/history_text">
-        </ListView>
+
     </RelativeLayout>
 
     <Button

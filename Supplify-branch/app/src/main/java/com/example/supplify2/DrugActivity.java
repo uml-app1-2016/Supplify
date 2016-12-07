@@ -102,10 +102,6 @@ public class DrugActivity extends AppCompatActivity{
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         Intent intent = getIntent();
         String str = intent.getStringExtra("location");
-        //LinearLayout magic1 = (LinearLayout) findViewById(R.id.magic_layout);
-        //LinearLayout magic2 = (LinearLayout) findViewById(R.id.magic_layout2);
-        //LinearLayout magic3 = (LinearLayout) findViewById(R.id.magic_layout3);
-        LinearLayout magic4 = (LinearLayout) findViewById(R.id.magic_layout4);
         TextView textView1 = (TextView) findViewById(R.id.textView1);
         TextView textView2 = (TextView) findViewById(R.id.side_effects);
         TextView textView3 = (TextView) findViewById(R.id.pros);
@@ -151,16 +147,33 @@ public class DrugActivity extends AppCompatActivity{
         @Override
         protected void onPostExecute(ArrayList<String> result) {
 
+            String temp1 = result.get(0);
+            String temp2 = result.get(1);
+            String temp3 = result.get(2);
+            String temp4 = result.get(3);
+
+            if (temp1 != "") {
+                View b = findViewById(R.id.magic_btn4);
+                b.setVisibility(View.VISIBLE);
+            }
+
+            if (temp2 != "") {
+                View b = findViewById(R.id.magic_btn3);
+                b.setVisibility(View.VISIBLE);
+            }
+
+            if (temp3 != "") {
+                View b = findViewById(R.id.magic_btn2);
+                b.setVisibility(View.VISIBLE);
+            }
+
+            if (temp4 != "") {
+                View b = findViewById(R.id.magic_btn3);
+                b.setVisibility(View.VISIBLE);
+            }
 
             textView1.setText(str);
-
-            String temp = result.get(0);
-            int length = temp.length();
-            length = length / 54;
-            int newHeight = length * 50;
-            //RelativeLayout.LayoutParams params1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, newHeight);
-            //magic4.setLayoutParams(params1);
-            textView2.setText(temp);
+            textView2.setText(result.get(0));
             textView3.setText(result.get(2));
             textView4.setText(result.get(3));
             textView5.setText(result.get(1));
