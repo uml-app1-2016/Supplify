@@ -13,6 +13,4 @@ public class Drug {
     public static String name;
     public static int Drug_ID;
 
-    public static int current_id = 0;
-
 }

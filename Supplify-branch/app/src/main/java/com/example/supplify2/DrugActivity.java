@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -29,20 +30,6 @@ public class DrugActivity extends AppCompatActivity{
         new accessNetwork().execute("");
         // creating a new repo obj to access db
         DrugRepo repo = new DrugRepo(this);
-
-        TextView view = (TextView) findViewById(R.id.test_name);
-
-        // get all of the drug names
-        ArrayList<Drug> drugs = repo.getDrugList();
-
-        // Go through all of our drugs and display them for testing
-        for(Drug s: drugs) {
-            String text = view.getText().toString();
-
-            view.setText(text + " : " + s.name);
-
-        }
-
 
         // on click listeners for the buttons on the drug activity so that we can toggle the text when they're clicked.
         Button findMagicBtn = (Button) findViewById(R.id.magic_btn1);
@@ -205,6 +192,11 @@ public class DrugActivity extends AppCompatActivity{
             textView3.setText(result.get(2));
             textView4.setText(result.get(3));
             textView5.setText(result.get(1));
+            Drug d = repo.getDrugByName(textView1.getText().toString());
+            if(d != null) {
+                ImageView image = (ImageView) findViewById(R.id.action_new_favorite_view_history);
+                image.setImageResource(R.drawable.favorite);
+            }
             progress.dismiss();
 
         }

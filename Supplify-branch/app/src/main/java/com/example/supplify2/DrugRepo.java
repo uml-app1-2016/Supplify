@@ -31,7 +31,6 @@ public class DrugRepo {
         // Inserting Row
         long Drug_Id = db.insert(Drug.TABLE, null, values);
         db.close(); // Closing database connection
-        Drug.current_id++;
         return (int) Drug_Id;
     }
 
@@ -70,12 +69,10 @@ public class DrugRepo {
         // looping through all rows and adding to list
 
         if (cursor.moveToFirst()) {
-            String KEY_ID = Drug.KEY_ID;
-            String Key_name = Drug.KEY_name;
             do {
                 Drug drug = new Drug();
-                drug.name = cursor.getString(cursor.getColumnIndex(Key_name));
-                drug.Drug_ID = cursor.getInt(cursor.getColumnIndex(KEY_ID));
+                drug.name = cursor.getString(cursor.getColumnIndex(drug.KEY_name));
+                drug.Drug_ID = cursor.getInt(cursor.getColumnIndex(drug.KEY_ID));
                 DrugList.add(drug);
             } while (cursor.moveToNext());
         }
@@ -84,6 +81,31 @@ public class DrugRepo {
         db.close();
         return DrugList;
 
+    }
+
+    public ArrayList<String> getDrugNames() {
+        //Open connection to read only
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String selectQuery =  "SELECT  " +
+                Drug.KEY_ID + "," +
+                Drug.KEY_name +
+                " FROM " + Drug.TABLE;
+
+        //Drug Drug = new Drug();
+        ArrayList<String> DrugList = new ArrayList<>();
+
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+
+        if (cursor.moveToFirst()) {
+            do {
+                DrugList.add(cursor.getString(cursor.getColumnIndex(Drug.KEY_name)));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+        return DrugList;
     }
 
     public Drug getDrugById(int Id){
