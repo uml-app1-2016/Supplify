@@ -37,15 +37,20 @@ public class DrugActivity extends AppCompatActivity{
         DrugRepo repo = new DrugRepo(this);
         TextView view = (TextView) findViewById(R.id.test_name);
 
-        ArrayList<HashMap<String, String>> drugs = repo.getDrugList();
-        for(HashMap<String, String> d : drugs) {
+        ArrayList<String> drugs = repo.getDrugList();
+        for(String s: drugs) {
+            String text = view.getText().toString();
+            view.setText(text + " : " + s);
+
+        }
+        /*for(HashMap<String, String> d : drugs) {
             Iterator it = d.entrySet().iterator();
             while(it.hasNext()) {
                 Map.Entry pair = (Map.Entry)it.next();
                 String text = view.getText().toString();
                 view.setText(text + " " + pair.getValue());
             }
-        }
+        }*/
 
 
         Button findMagicBtn = (Button) findViewById(R.id.magic_btn1);
