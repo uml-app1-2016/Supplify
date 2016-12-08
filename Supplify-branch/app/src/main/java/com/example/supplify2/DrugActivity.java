@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,8 @@ import java.util.HashMap;
 
 
 public class DrugActivity extends AppCompatActivity{
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,15 +37,14 @@ public class DrugActivity extends AppCompatActivity{
         TextView view = (TextView) findViewById(R.id.test_name);
 
         // get all of the drug names
-        ArrayList<Drug> drugs = repo.getDrugList();
+        ArrayList<Drug> drugs = new ArrayList<>();
+        drugs = repo.getDrugList();
 
         // Go through all of our drugs and display them for testing
         for(Drug s: drugs) {
             String text = view.getText().toString();
-            view.setText(text + " : " + s);
-            Drug d = repo.getDrugByName(s.name);
-            int id = d.Drug_ID;
-            repo.delete(id);
+            view.setText(text + " : " + s.name);
+
         }
 
 
@@ -99,8 +101,17 @@ public class DrugActivity extends AppCompatActivity{
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu options from the res/menu/menu_catalog.xml file.
+        // This adds menu items to the app bar.
+        getMenuInflater().inflate(R.menu.menu_drug, menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
+        DrugRepo repo = new DrugRepo(this);
         // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId())
         {
@@ -110,8 +121,14 @@ public class DrugActivity extends AppCompatActivity{
                 return true;
 
             // Respond to a click on the "View history" menu option
-            case R.id.action_view_history:
-                startActivity(new Intent(this, HistoryActivity.class));
+            case R.id.action_set_favorite:
+
+                TextView textView1 = (TextView) findViewById(R.id.textView1);
+                String passStr = textView1.getText().toString();
+                Drug addDrug = new Drug();
+                addDrug.name = passStr;
+                addDrug.Drug_ID = 0;
+                int i = repo.insert(addDrug);
                 return true;
         }
         return super.onOptionsItemSelected(item);
