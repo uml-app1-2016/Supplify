@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,7 +28,7 @@ public class DbHelper extends SQLiteOpenHelper {
     // Columns of our database
     public static final String SUPPS_TABLE_NAME = "supps";
     public static final String SUPPS_COLUMN_ID = "id";
-    public static final String SUPPS_COLOUMN_NAME = "name";
+    public static final String SUPPS_COLUMN_NAME = "name";
     public static final String SUPPS_COLUMN_DESCRIPTION = "description";
     public static final String SUPPS_COLUMN_DOSAGE = "dosage";
     public static final String SUPPS_COLUMN_EFFECTS = "effects";
@@ -51,10 +50,10 @@ public class DbHelper extends SQLiteOpenHelper {
         // Create a String that contains the SQL statement to create the pets table
         String SQL_CREATE_SUPPS_TABLE =  "CREATE TABLE " + SUPPS_TABLE_NAME + "(" +
               SUPPS_COLUMN_ID + " INTEGER PRIMARY KEY, " +
-              SUPPS_COLOUMN_NAME + "TEXT NOT NULL, " +
+                SUPPS_COLUMN_NAME + " TEXT, " +
               SUPPS_COLUMN_DESCRIPTION + " TEXT, " +
               SUPPS_COLUMN_DOSAGE + " TEXT, " +
-              SUPPS_COLUMN_EFFECTS + " TEXT " + ")";
+              SUPPS_COLUMN_EFFECTS + " TEXT" + ")";
         // Execute the SQL statement
         db.execSQL(SQL_CREATE_SUPPS_TABLE);
     }
@@ -74,17 +73,16 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     /** Function to insert a supplement into our database */
-    public boolean insertSupp (Supp supp) {
-        SQLiteDatabase db = getWritableDatabase();
+    public void insertSupp (Supp supp) {
+        SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("name", supp.getName());
-        contentValues.put("description", supp.getDescription());
-        contentValues.put("dosage", supp.getDosage());
-        contentValues.put("effect", supp.getEffect());
+        contentValues.put(SUPPS_COLUMN_NAME, supp.getName());
+        contentValues.put(SUPPS_COLUMN_DESCRIPTION, supp.getDescription());
+        contentValues.put(SUPPS_COLUMN_DOSAGE, supp.getDosage());
+        contentValues.put(SUPPS_COLUMN_EFFECTS, supp.getEffect());
         db.insert(SUPPS_TABLE_NAME, null, contentValues);
         db.close();
-        return true;
     }
 
     /** Function to insert multiple supplements into our database */
@@ -141,7 +139,7 @@ public class DbHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
         Cursor res = db.rawQuery(("SELECT * FROM " + SUPPS_TABLE_NAME + " WHERE "
-                + SUPPS_COLOUMN_NAME + "=\"" + name + "\""), null);
+                + SUPPS_COLUMN_NAME + "=\"" + name + "\""), null);
 
         res.moveToFirst();
         while(!res.isAfterLast()) {
@@ -160,8 +158,8 @@ public class DbHelper extends SQLiteOpenHelper {
     /** Function to check if the supplement exists */
     public boolean suppExist(String name) {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor res = db.rawQuery(("SELECT * FROM " + SUPPS_TABLE_NAME + " WHERE "
-                + SUPPS_COLOUMN_NAME + "=\"" + name + "\""), null);
+        Cursor res = db.rawQuery((" SELECT * FROM " + SUPPS_TABLE_NAME), null);
+
         if(res.getCount() <= 0) {
             res.close();
             return false;
