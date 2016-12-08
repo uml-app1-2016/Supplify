@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -16,12 +17,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class DrugActivity extends AppCompatActivity{
-
+    DrugRepo repo = new DrugRepo(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement);
@@ -39,10 +38,9 @@ public class DrugActivity extends AppCompatActivity{
         // Go through all of our drugs and display them for testing
         for(Drug s: drugs) {
             String text = view.getText().toString();
-            view.setText(text + " : " + s);
-            Drug d = repo.getDrugByName(s.name);
-            int id = d.Drug_ID;
-            repo.delete(id);
+
+            view.setText(text + " : " + s.name);
+
         }
 
 
@@ -110,7 +108,13 @@ public class DrugActivity extends AppCompatActivity{
                 return true;
 
             // Respond to a click on the "View history" menu option
-            case R.id.action_view_history:
+            case R.id.action_new_favorite_view_history:
+                TextView view = (TextView) findViewById(R.id.textView1);
+                String name = view.getText().toString();
+                Drug drug = new Drug();
+                drug.name = name;
+                drug.Drug_ID = 0;
+                repo.insert(drug);
                 startActivity(new Intent(this, HistoryActivity.class));
                 return true;
         }
@@ -143,25 +147,25 @@ public class DrugActivity extends AppCompatActivity{
             ArrayList<String> listA = new ArrayList<String>(4);
             String temp = "";
             for (String s : list) {
-                temp = temp + s;
+                temp = temp + '\n' +  s;
             }
             listA.add(0,temp);
             String temp1 = "";
             ArrayList<String> list2 = map.get("Dosage");
             for (String s : list2) {
-                temp1 = temp1 + s;
+                temp1 = temp1 + '\n' + s;
             }
             listA.add(1, temp1);
             String temp2 = "";
             ArrayList<String> list3 = map.get("Pros");
             for (String s : list3) {
-                temp2 = temp2 + s;
+                temp2 = temp2 + '\n' + s;
             }
             listA.add(2, temp2);
             String temp3 = "";
             ArrayList<String> list4 = map.get("Cons");
             for (String s : list4) {
-                temp3 = temp3 + s;
+                temp3 = temp3 + '\n' + s;
             }
             listA.add(3, temp3);
             return listA;
@@ -212,7 +216,13 @@ public class DrugActivity extends AppCompatActivity{
             progress.setCancelable(false); // disable dismiss by tapping outside of the dialog
             progress.show();
         }
-
-
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        // Inflate the menu options from the res/menu/menu_catalog.xml file.
+        // This adds menu items to the app bar.
+        getMenuInflater().inflate(R.menu.menu_favorite, menu);
+        return true;
     }
 }

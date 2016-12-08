@@ -75,9 +75,8 @@ public class DrugRepo {
             do {
                 Drug drug = new Drug();
                 drug.name = cursor.getString(cursor.getColumnIndex(Key_name));
-                drug.Drug_ID = Integer.getInteger(cursor.getString(cursor.getColumnIndex(KEY_ID)));
+                drug.Drug_ID = cursor.getInt(cursor.getColumnIndex(KEY_ID));
                 DrugList.add(drug);
-
             } while (cursor.moveToNext());
         }
 
