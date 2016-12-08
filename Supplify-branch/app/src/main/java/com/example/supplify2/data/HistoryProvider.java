@@ -1,3 +1,4 @@
+
 package com.example.supplify2.data;
 
 import android.content.ContentProvider;
@@ -53,11 +54,11 @@ public class HistoryProvider extends ContentProvider {
     }
 
     /** Database helper object */
-    private HistoryDbHelper mDbHelper;
+    private DbHelper mDbHelper;
 
     @Override
     public boolean onCreate() {
-        mDbHelper = new HistoryDbHelper(getContext());
+        mDbHelper = new DbHelper(getContext());
         return true;
     }
 

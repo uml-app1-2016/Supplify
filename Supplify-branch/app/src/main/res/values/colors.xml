@@ -3,4 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="Gray">#ffffff</color>
+    <color name="SupBlack">#838383</color>
+    <color name="SupDarkGreen">#16C172</color>
+    <color name="SupLightGreen">#2AFC98</color>
+    <color name="SupWhite">#FCFAF9</color>
+    <color name="SupGrey">#CCD7C5</color>
+    <color name="Red">#BB342F</color>
+    <color name="White">#FFFFFF</color>
 </resources>
