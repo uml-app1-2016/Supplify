@@ -1,27 +1,20 @@
 package com.example.supplify2;
 
-import android.animation.Animator;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.graphics.LinearGradient;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewAnimationUtils;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 
 
 public class DrugActivity extends AppCompatActivity{
@@ -33,26 +26,27 @@ public class DrugActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_supplement);
 
+        // our async task runs here
         new accessNetwork().execute("");
+        // creating a new repo obj to access db
         DrugRepo repo = new DrugRepo(this);
+
         TextView view = (TextView) findViewById(R.id.test_name);
 
-        ArrayList<String> drugs = repo.getDrugList();
-        for(String s: drugs) {
+        // get all of the drug names
+        ArrayList<Drug> drugs = repo.getDrugList();
+
+        // Go through all of our drugs and display them for testing
+        for(Drug s: drugs) {
             String text = view.getText().toString();
             view.setText(text + " : " + s);
-
+            Drug d = repo.getDrugByName(s.name);
+            int id = d.Drug_ID;
+            repo.delete(id);
         }
-        /*for(HashMap<String, String> d : drugs) {
-            Iterator it = d.entrySet().iterator();
-            while(it.hasNext()) {
-                Map.Entry pair = (Map.Entry)it.next();
-                String text = view.getText().toString();
-                view.setText(text + " " + pair.getValue());
-            }
-        }*/
 
 
+        // on click listeners for the buttons on the drug activity so that we can toggle the text when they're clicked.
         Button findMagicBtn = (Button) findViewById(R.id.magic_btn1);
         findMagicBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +118,8 @@ public class DrugActivity extends AppCompatActivity{
     }
 
     private class accessNetwork extends AsyncTask<String, Void, ArrayList<String>> {
+        // these are the types that are passed to our scraper
+        // for their meanings view scraper.java
         int[] types = {2, 4, 5, 6};
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
         Intent intent = getIntent();
@@ -138,6 +134,7 @@ public class DrugActivity extends AppCompatActivity{
         protected ArrayList<String> doInBackground(String... params) {
 
             try {
+                // passing in the parameters previously created
                 map = SupplifyScraper.nootrimentScraper(str, types);
             } catch (IOException e) {
                 e.printStackTrace();
@@ -147,9 +144,7 @@ public class DrugActivity extends AppCompatActivity{
             String temp = "";
             for (String s : list) {
                 temp = temp + s;
-
             }
-
             listA.add(0,temp);
             String temp1 = "";
             ArrayList<String> list2 = map.get("Dosage");
@@ -171,7 +166,7 @@ public class DrugActivity extends AppCompatActivity{
             listA.add(3, temp3);
             return listA;
         }
-
+        // the post went through successfully over the network.
         @Override
         protected void onPostExecute(ArrayList<String> result) {
 

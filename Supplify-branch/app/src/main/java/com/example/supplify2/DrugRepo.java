@@ -55,7 +55,7 @@ public class DrugRepo {
         db.close(); // Closing database connection
     }
 
-    public ArrayList<String>  getDrugList() {
+    public ArrayList<Drug>  getDrugList() {
         //Open connection to read only
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         String selectQuery =  "SELECT  " +
@@ -64,7 +64,7 @@ public class DrugRepo {
                 " FROM " + Drug.TABLE;
 
         //Drug Drug = new Drug();
-        ArrayList<String> DrugList = new ArrayList<>();
+        ArrayList<Drug> DrugList = new ArrayList<>();
 
         Cursor cursor = db.rawQuery(selectQuery, null);
         // looping through all rows and adding to list
@@ -73,7 +73,10 @@ public class DrugRepo {
             String KEY_ID = Drug.KEY_ID;
             String Key_name = Drug.KEY_name;
             do {
-                DrugList.add(cursor.getString(cursor.getColumnIndex(Key_name)));
+                Drug drug = new Drug();
+                drug.name = cursor.getString(cursor.getColumnIndex(Key_name));
+                drug.Drug_ID = Integer.getInteger(cursor.getString(cursor.getColumnIndex(KEY_ID)));
+                DrugList.add(drug);
 
             } while (cursor.moveToNext());
         }

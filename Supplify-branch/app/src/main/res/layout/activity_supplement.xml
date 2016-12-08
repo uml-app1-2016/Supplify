@@ -159,7 +159,7 @@
                     android:layout_marginRight="15dp"
                     android:layout_below="@+id/magic_layout4"
                     android:id="@+id/test_name"
-                    android:text="Hello World"
+                    android:text=""
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
                     />
