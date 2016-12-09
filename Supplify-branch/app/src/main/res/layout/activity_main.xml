@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,47 +8,78 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/White"
     tools:context="com.example.supplify2.MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/search_button"
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
-
-        <EditText
-            android:id="@+id/search_target"
-            android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:hint="Search"/>
-    </RelativeLayout>
+            android:text="Entry not found"
+            android:textColor="@color/Red"
+            android:visibility="gone" /></LinearLayout>
 
     <RelativeLayout
         android:layout_below="@id/search_button"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="40dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:text="Past Searches"
-            android:textSize="25dp"
-            android:id="@+id/history_text"
-            />
-        <ListView
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/history_text">
-        </ListView>
+
     </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/go_to_history"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        />
+    <RelativeLayout
+        android:id="@+id/search_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/search_target"
+            android:layout_width="250dp"
+            android:hint="Search"
+            android:layout_alignTop="@+id/go_to_drugs"
+            android:layout_alignParentStart="true"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:fontFamily="sans-serif"
+            android:typeface="normal"
+            android:textStyle="normal|bold"
+            android:textColor="@color/SupBlack"
+            android:background="@drawable/textborder"
+            android:textSize="18sp"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="10dp"
+            android:textCursorDrawable="@null"
+            android:textColorHint="@drawable/selector"
+            android:layout_height="40dp" />
+
+        <Button
+            android:id="@+id/go_to_drugs"
+            android:layout_width="50dp"
+            android:hint="Go"
+            android:background= "#16C172"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/search_target"
+            android:layout_toEndOf="@+id/search_target"
+            android:textColor="#FFFFFF"
+            android:textColorHint="@color/White"
+            android:layout_height="40dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/supplify"
+            android:id="@+id/imageView"
+            android:layout_above="@+id/search_target"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="16dp" />
+    </RelativeLayout>
 </RelativeLayout>
