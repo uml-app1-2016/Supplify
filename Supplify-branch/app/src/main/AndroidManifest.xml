@@ -32,7 +32,7 @@
 
         <activity
             android:name=".HistoryActivity"
-            android:label="Search History">
+            android:label="Favorite">
 
             <!-- Parent activity meta-date to support 4.0 and lower -->
             <meta-data
